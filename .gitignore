@@ -1,0 +1,8 @@
+.idea
+*iml
+figwheel_server.log
+resources/public/cookbook
+target
+.lein-repl-history
+checkouts
+.nrepl-port
