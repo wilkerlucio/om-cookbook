@@ -1,2 +1,2 @@
 (ns om-cookbook.cookbook
-  (:require [om-cookbook.parsing-service-databases]))
+  (:require [om-cookbook.Parsing-Service-Databases-as-Remote]))

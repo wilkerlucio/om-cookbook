@@ -1,4 +1,4 @@
-(ns om-cookbook.parsing-service-databases
+(ns om-cookbook.Parsing-Service-Databases-as-Remote
   (:require-macros [cljs.test :refer [is]]
                    [cljs.core.async.macros :refer [go go-loop]])
   (:require [om.next :as om :refer-macros [defui]]
