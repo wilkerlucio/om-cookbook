@@ -8,7 +8,7 @@
                  [figwheel-sidecar "0.5.0-2" :exclusions [clj-time joda-time org.clojure/tools.reader] :scope "test"]
                  [cljsjs/codemirror "5.8.0-0"]]
 
-  :source-paths ["src/cookbook"]
+  :source-paths ["src/cookbook" "src/prod"]
 
   :plugins [[lein-cljsbuild "1.1.1"]]
 
@@ -32,6 +32,24 @@
                                :parallel-build       true
                                :recompile-dependents true
                                :verbose              false
+                               :foreign-libs         [{:provides ["cljsjs.codemirror.addons.closebrackets"]
+                                                       :requires ["cljsjs.codemirror"]
+                                                       :file     "resources/public/codemirror/closebrackets-min.js"}
+                                                      {:provides ["cljsjs.codemirror.addons.matchbrackets"]
+                                                       :requires ["cljsjs.codemirror"]
+                                                       :file     "resources/public/codemirror/matchbrackets-min.js"}]}}
+  
+               {:id           "pages"
+                :source-paths ["src/cookbook" "src/prod"]
+                :compiler     {
+                               :main                 core
+                               :devcards             true
+                               :asset-path           "pages"
+                               :output-to            "resources/public/pages/tutorial.js"
+                               :output-dir           "resources/public/pages"
+                               :parallel-build       false
+                               :verbose              true
+                               :optimizations        :advanced
                                :foreign-libs         [{:provides ["cljsjs.codemirror.addons.closebrackets"]
                                                        :requires ["cljsjs.codemirror"]
                                                        :file     "resources/public/codemirror/closebrackets-min.js"}
